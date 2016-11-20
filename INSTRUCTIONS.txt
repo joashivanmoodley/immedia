@@ -1,0 +1,26 @@
+This Website is built with Python and Django 1.8.4, a django in environment need to set up in order to run this website.
+To do so Please install pip, 
+ 
+ linux OS (if not installed byy default)
+ run > "sudo easy_install pip" 
+
+ MAC (if not installed byy default).
+ > "curl https://bootstrap.pypa.io/ez_setup.py -o - |"
+ > "sudo python sudo easy_install pip"
+
+ Thereafter run "pip -r req.txt"  This will take all packages found in this file and install it in the django environment.
+
+ Once Django is set up, cd into imedia_test then run "python manage.py  migrate" this will create initial db tables, for convenience I configured a sqllite to be the db engine to be used, this can be changed in settings.py 
+
+ Then Run "python manage.py get_landmark" this will install default location landmark images based on the foursquare and 500px apis.
+
+ Then Run "python manage.py runserver" this will start up the website on localhost:8000
+
+ There 3 URLS for this website http://localhost:8000/ , http://localhost:8000/(?P<location_id>\d+)/images/ and
+http://localhost:8000/images/(?P<image_id>\d+)/
+
+
+> http://localhost:8000/" -  returns a list of all locations that are already in the db , you are allowed allowed to search for locations that are not in the local db, based or REGION ie Durban or GEO-Coords.
+From there you can click on "view images" which goes to
+> http://localhost:8000/(?P<location_id>\d+)/images/  This requires an Integer based location id to return a list of images from a specific location. ie: http://localhost:8000/1/images/ you can now click on "view details" which goes to
+> http://localhost:8000/images/(?P<image_id>\d+)/ - which returns a bigger version of the image selected and details about the image ie http://localhost:8000/images/1/
