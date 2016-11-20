@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="blog-grids">
+<div class="blog-grid-left" onclick="location.href='#';">
+<img src="{{image.image}}" alt="{{image.image}}" height="500" width="500">
+</div>
+<div class="blog-grid-right">
+	<h4>
+	Location : {{image.land_mark.location}}<br/>
+	Land Mark :{{image.land_mark|safe}}<br />
+	Date Taken : {{image.date_added}}<br />
+	Image Type : {{image.image_type|safe}}<br />
+	Image Owner :  {{image.owner|safe}}<br />
+	Address: {{image.land_mark.address|safe}}<br/>
+	Latitude: {{image.land_mark.latitude|safe}}<br/>
+	Longitude: {{image.land_mark.longitude|safe}}<br/><br/>
+	Description: {{image.description|safe}}<br/>
+
+	</h4>
+	
+	
+</div>
+</div>
+
+
+
+</div>
+
+{% endblock content %}
+

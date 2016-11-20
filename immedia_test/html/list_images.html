@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="recent-works-head"><h4> You Are Now Viewing All in images in {{location_name}}</h4>
+</div>
+<table style="padding:5px">
+	<tr>
+		<td>
+			Land Mark
+		</td>
+		<td>
+			Image
+		</td>
+		<td>
+			Image Type
+		</td>
+		<td>
+			Description
+		</td>
+		<td>
+			Owner
+		</td>
+		<td>
+			Details
+		</td>
+
+	</tr>
+	{% for i in images %}
+	<tr>
+		<td>
+			{{i.land_mark|safe}}
+		</td>
+		<td>
+		<img src="{{i.image}}" alt="{{i.image}}" height="42" width="42">
+			
+		</td>
+		<td>
+			{{i.image_type|safe}}
+		</td>
+		<td>
+			{{i.description|safe}}
+		</td>
+		<td>
+			{{i.owner|safe}}
+		</td>
+		<td>
+			<a href="/images/{{i.id}}/">View Details</a>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock content %}

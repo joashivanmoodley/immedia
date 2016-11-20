@@ -1,0 +1,9 @@
+Django==1.8.4
+foursquare==1!2016.9.12
+oauth2==1.9.0.post1
+oauth2client==1.5.1
+oauthlib==1.0.3
+requests==2.8.1
+requests-oauthlib==0.6.1
+requests-toolbelt==0.7.0
+python-500px==0.2.0
